@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Toggle */
+input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+  }
+  
+
+/*Buttons*/
+@layer components {
+    .btn-primary {
+        @apply p-4 bg-LightGrayishOrange shadow-md shadow-GrayishOrange cursor-pointer rounded-md;
+    }
+
+    .btn-secondary {
+        @apply p-4 bg-KeyBackground shadow-md shadow-KeyShadow cursor-pointer rounded-md;
+    }
+
+    .btn-tertiary {
+        @apply p-4 bg-Red shadow-md shadow-DarkRed cursor-pointer rounded-md;
+    }
+}
