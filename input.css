@@ -12,14 +12,14 @@ input:checked ~ .dot {
 /*Buttons*/
 @layer components {
     .btn-primary {
-        @apply p-4 bg-LightGrayishOrange shadow-md shadow-GrayishOrange cursor-pointer rounded-md;
+        @apply p-2 bg-LightGrayishOrange shadow-md border-b-4 border-GrayishOrange cursor-pointer rounded-lg hover:bg-White;
     }
 
     .btn-secondary {
-        @apply p-4 bg-KeyBackground shadow-md shadow-KeyShadow cursor-pointer rounded-md;
+        @apply p-2 bg-VeryDarkCyan dark:bg-KeyBackground border-b-4 border-MainBackground cursor-pointer rounded-lg hover:bg-DarkModerateCyan;
     }
 
     .btn-tertiary {
-        @apply p-4 bg-Red shadow-md shadow-DarkRed cursor-pointer rounded-md;
+        @apply p-2 bg-DarkOrange dark:bg-Red border-b-4 border-MainBackground cursor-pointer rounded-lg hover:bg-Orange;
     }
 }

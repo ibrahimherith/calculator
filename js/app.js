@@ -1,6 +1,6 @@
+//variables
 const display1El = document.querySelector('.display-1');
 const display2El = document.querySelector('.display-2');
-const tempResultEl = document.querySelector('.temp-result');
 const numbersEl = document.querySelectorAll('.number');
 const operationEl = document.querySelectorAll('.operation');
 const equalEl = document.querySelector('.equal');
@@ -65,14 +65,13 @@ equalEl.addEventListener('click', (e) => {
     display2El.innerText = result;
     dis2Num = result;
     dis1Num = '';
-    tempResultEl.innerText = '';
+    display1El.innerText = '';
 })
 
 
 clearAllEl.addEventListener('click', (e) => {
-    display1El.innerText = '0';
+    display1El.innerText = '';
     display2El.innerText = '0';
-    tempResultEl.innerText = '0';
     dis1Num = '';
     dis2Num = '';
     result = '';
@@ -91,8 +90,6 @@ function clearVar(name = ''){  //clears display-2 and display values on display-
     display1El.innerText = dis1Num;
     display2El.innerText = '';
     dis2Num = '';
-
-    tempResultEl.innerText = result; //display temporary result on temp-result 
 }
 
 function mathOperation(){ //performs arithmetic calculations
@@ -167,3 +164,47 @@ function clickOperation(key){
 function clickEqual(){
     equalEl.click()
 }
+
+
+
+///THEME JS
+var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+// Change the icons inside the button based on previous settings
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    themeToggleLightIcon.classList.remove('hidden');
+} else {
+    themeToggleDarkIcon.classList.remove('hidden');
+}
+
+var themeToggleBtn = document.getElementById('theme-toggle');
+
+themeToggleBtn.addEventListener('click', function() {
+
+    // toggle icons inside button
+    themeToggleDarkIcon.classList.toggle('hidden');
+    themeToggleLightIcon.classList.toggle('hidden');
+
+    // if set via local storage previously
+    if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        }
+
+    // if NOT set via local storage previously
+    } else {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        }
+    }
+    
+});

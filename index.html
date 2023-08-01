@@ -8,56 +8,68 @@
     <!--Links-->
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body class="bg-MainBackground">
-    <header>
-      <div class="container mx-auto p-6 mt-10 flex justify-between items-center">
-        <!--left side-->
-        <h5 class="text-3xl text-White font-bold">calc</h5>
-        <!--right side-->
-        <div class="flex items-end">
-          <p class="pr-6 text-sm text-white font-bold">THEME</p>
-          <div>
-            <p class="text-White">1 2 3</p>
-            <div class="flex items-center justify-center w-full mt-2">
-              <label for="toogleA" class="flex items-center cursor-pointer">
-                <!-- toggle -->
-                <div class="relative">
-                  <!-- input -->
-                  <input id="toogleA" type="checkbox" class="sr-only" />
-                  <!-- line -->
-                  <div
-                    class="w-10 h-4 bg-gray-400 rounded-full shadow-inner"
-                  ></div>
-                  <!-- dot -->
-                  <div
-                    class="dot absolute w-6 h-6 bg-white rounded-full shadow -left-1 -top-1 transition"
-                  ></div>
-                </div>
-              </label>
-            </div>
+  <body class="bg-LightGray dark:bg-MainBackground">
+    <main
+      class="container mx-auto h-screen p-6 flex justify-center items-center"
+    >
+      <div class="space-y-3 md:w-1/2">
+        <!--header-->
+        <section>
+          <div class="flex justify-between items-center">
+            <!--title-->
+            <h5
+              class="text-3xl text-VeryDarkGrayishBlue dark:text-White font-bold"
+            >
+              calc
+            </h5>
+            <!--theme button-->
+            <button
+              id="theme-toggle"
+              type="button"
+              class="text-VeryDarkGrayishBlue dark:text-White hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+            >
+              <svg
+                id="theme-toggle-dark-icon"
+                class="w-5 h-5 hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="w-5 h-5 hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
           </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <!--screen-->
-      <section>
-        <div class="container mx-auto p-6">
+        </section>
+        <!--screen-->
+        <section>
           <div
-            class="p-6 w-full rounded-xl flex flex-col items-end bg-ScreenBackground text-xl text-White font-bold"
+            class="p-6 flex flex-col items-end rounded-xl text-4xl text-VeryDarkGrayishBlue dark:text-White font-bold bg-VeryLightGray dark:bg-ScreenBackground"
           >
-            <div class="display-1">0</div>
             <div class="flex justify-between w-full">
-              <div class="temp-result">0</div>
+              <div class="display-1"></div>
               <div class="display-2">0</div>
             </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <div class="container mx-auto p-6">
+        </section>
+        <!--buttons-->
+        <section>
           <div
-            class="all-buttons p-6 w-full rounded-xl text-VeryDarkGrayishBlue text-center text-2xl font-bold bg-KeypadBackground grid grid-cols-4 gap-4"
+            class="all-buttons p-6 rounded-xl text-VeryDarkGrayishBlue text-center text-2xl font-bold bg-GrayishRed dark:bg-KeypadBackground grid grid-cols-4 gap-4"
           >
             <div class="button number btn-primary">7</div>
             <div class="button number btn-primary">8</div>
@@ -86,8 +98,8 @@
             </div>
             <div class="button equal btn-tertiary col-span-2 text-White">=</div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
 
     <script src="js/app.js"></script>
